@@ -1,0 +1,174 @@
+\documentclass[12pt,a4paper,listof=totoc]{scrartcl}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setromanfont{Times New Roman}
+\addtokomafont{disposition}{\normalfont\bfseries}
+\usepackage{microtype} % fix overfull hboxes nicely
+\usepackage[onehalfspacing]{setspace}
+\usepackage[
+    breaklinks=true,
+    colorlinks=false,
+    pdfborder={0 0 0},
+    pdfauthor={Benedikt Schnur},
+    pdftitle={Bachelor Thesis},
+    unicode=true
+]{hyperref}
+\usepackage{titling}
+\usepackage{ragged2e}
+\usepackage{tikz}
+\usepackage{xcolor}					% Farben
+\newcommand*{\email}[1]{            % Klickbare eMail-Adressen
+    \normalsize\href{mailto:#1}{#1}\par
+    }
+\usepackage{booktabs}				% "Schöne" Tabellen
+\usepackage{csquotes}               % Empfohlener Import für babel/polyglossia
+\usepackage{float}                  % Bessere Platzierungsmöglichkeiten von floats
+\usepackage{siunitx}                % Einheitliche Darstellung von Werten mit ihren Einheiten
+\sisetup{
+    detect-all,
+    per-mode = symbol,
+    range-phrase = --
+}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{acro}
+\acsetup{make-links=true}
+
+\usepackage[section]{placeins}      % Bilder bleiben im Abschnitt
+\let\Oldsubsection\subsection
+\renewcommand{\subsection}{\FloatBarrier\Oldsubsection}
+
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,headheight=18pt,headsep=1.365cm,footskip=1cm,footnotesep=1.365cm]{geometry}
+\usepackage{scrlayer-scrpage}
+%\setlength{\headheight}{2cm}
+%\setlength{\footheight}{2cm}
+\RedeclareSectionCommands[
+  beforeskip=12pt,
+  afterskip=6pt]{section,subsection,subsubsection,paragraph,subparagraph}
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0em} 
+
+\usepackage[
+    backend=biber,
+    style=ieee,
+    maxcitenames=2,	% mindestens 2 Namen ausgeben bevor et. al. kommt
+    mincitenames=1,
+    maxbibnames=6,
+    minbibnames=1,
+    date=iso,
+    seconds=true, %werden nicht verwendet, so werden aber Warnungen unterdrückt.
+    urldate=iso,
+    dashed=false,
+    %autocite=inline,
+    useprefix=true, % 'von' im Namen beachten (beim Anzeigen)
+    mincrossrefs = 1
+]{biblatex}
+\usepackage{xpatch}
+\xapptobibmacro{cite:short}
+  {\setunit{\addcomma\space}%
+   \usebibmacro{date}}
+  {}
+  {}
+\DefineBibliographyStrings{german}{%et al. anstatt u. a.
+    andothers = {\textit{et\,al\adddot}},
+}
+\DefineBibliographyStrings{english}{ 
+	andothers = {\textit{et\,al\adddot}},             
+}
+
+\makeatletter
+\newcommand\Setmaxbibnames[1]{\renewcommand\blx@maxbibnames{#1}}
+\makeatletter
+
+\urlstyle{same}
+
+\usepackage[section]{placeins}      % Bilder bleiben im Abschnitt
+
+\usepackage{listings}
+\input{listing_languages}
+\renewcommand*\thelstnumber{\arabic{lstnumber}:}
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  xleftmargin=0.05\linewidth,
+  xrightmargin=0.05\linewidth,
+  showstringspaces=false,
+  inputencoding=utf8,
+  extendedchars=true,
+  numbers=left,                    
+  numbersep=5pt,
+  numberstyle=\scriptsize,
+  frame=lines,
+  breakatwhitespace=false,         
+  breaklines=true,
+  breakindent=0pt,
+  breakautoindent=false,
+  keepspaces=true,
+  showspaces=false,
+  showtabs=false,
+  tabsize=4,
+  columns=fullflexible,
+  keepspaces=true
+}
+\lstset{literate=%
+  {Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}1
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+}
+\newcommand{\textttx}[1]{{\footnotesize\texttt{#1}}}
+
+\usepackage{enumitem}
+\setlist[description]{
+	font={\normalfont\bfseries},
+	style=nextline,
+	labelsep=1em,
+	leftmargin=3em
+}
+\newlist{legal}{enumerate}{10}
+\setlist[legal]{label*=.\arabic*}
+\setlist[legal,1]{label=\arabic*}
+
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{svg}
+
+\usepackage{scrlayer-scrpage}
+\clearmainofpairofpagestyles
+\usepackage{scrhack}
+\usepackage[font=bf,labelfont=bf]{caption,subcaption}
+
+\usepackage[all]{nowidow} % Hurenkinder und Schusterjungen vermeiden
+
+\interfootnotelinepenalty=10000 % Fußnoten auf selber Seite lassen
+
+\usepackage{xurl} % Nach Biblatex laden - URL Umbrüche ermöglichen
+
+% nice "//"
+\makeatletter
+\newcommand{\twobar}{/\kern-0.2em/}
+\let\orig@Url@acthash\Url@acthash
+\let\new@Url@acthash\Url@acthash
+\g@addto@macro{\new@Url@acthash}{\Url@Edit\Url@String{//}{\twobar}}
+\let\orig@urlstyle\urlstyle
+\def\urlstyle{\let\Url@acthash\orig@Url@acthash\orig@urlstyle}
+\g@addto@macro{\url@rmstyle}{\let\Url@acthash\new@Url@acthash}
+\g@addto@macro{\url@sfstyle}{\let\Url@acthash\new@Url@acthash}
+\makeatother
+
+\usepackage{pdflscape}
+\usepackage{tabularx}
+\newcolumntype{n}{>{\hsize=.5\hsize}X}
+\newcolumntype{s}{>{\hsize=.3\hsize}X}
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{y}{>{\hsize=.3\hsize\raggedleft\arraybackslash}X}
+\renewcommand\tabularxcolumn[1]{m{#1}}% for vertical centering text in X column
+
+\usepackage{makecell}
+\usepackage[noabbrev,nameinlink]{cleveref}
+\usepackage{orcidlink}
+\usepackage{threeparttable}

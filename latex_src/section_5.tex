@@ -1,0 +1,46 @@
+\section{Cost Estimation of Potential Cloud Usage}\label{sec:awscostestimation}
+
+Utilization of cloud computing for the processing of the amount of data to be reanalyzed is a promising approach and a possible solution to the \ac{DoHG@MHH}s problems as outlined in \cref{subsection:goals}. Among cloud providers, \ac{AWS} offers specialized \textit{F1} instances through their \textit{\ac{EC2}} service with \ac{FPGA} support and pre-installed, official \textit{DRAGEN} software. Thus, \ac{AWS} was chosen for this approach.
+
+Costs for cloud computing should be calculated in advance to ensure that the \ac{DoHG@MHH} fully understands the expenses involved and can make an informed decision about whether the benefits of using cloud computing are worth the costs. This includes considering the cost of any additional services or solutions that may be required to address any limitations or challenges posed by cloud computing, such as limited bandwidth.
+
+By using the benchmarking results given by the last iteration of the \textit{Nextflow} implementation, a precise selection of the compute instance is possible regarding the required resource needs of each processing step.
+
+\Ac{AWS} provides a price calculator tool (see \autocite{AmazonWebServices2023}) designed to estimate the cost of using \ac{AWS} services. The calculator considers various factors such as the types of instances used, the number of instances, storage requirements, and data transfer costs to generate a comprehensive estimate of the total cost of using \ac{AWS} services. The tool provides a detailed breakdown of costs by service, region, and usage.
+
+The price calculation for one sample is done with the following assumptions:
+\begin{itemize}
+    \item A sample takes up \SI{100}{\giga\byte} of space (an approximation, \textit{NA12878} takes up \SI{107}{\giga\byte} for example). This consists of two parts: the uploaded data to be analyzed (either in BAM or FastQ file format), and the analyzation results produced by the pipeline (including the BAM file mapped to \textit{GRCh38}). Both consume an equal size of space.
+    \item The lowest possible \textit{\ac{EC2}} \textit{Intel} architecture-based instance configuration fitting to the results obtained in \cref{subsection:resourceoptimization} is used.
+    \item The exact usage time measured in \cref{subsection:resourceoptimization} is used as well.
+    \item Calculations are done for \textit{\ac{AWS}}' Frankfurt region because of legal and performance reasons.
+    \item The step \textttx{megSAPdb} is left out. This has to be done locally at the \ac{DoHG@MHH} to use the data in its database. Its resource consumption is negligible, as shown previously.
+    \item Data storage and transfer is calculated based on one sample. Pricing for more storage and data transfer may be cheaper in bulk.
+\end{itemize}
+
+Price calculations for the use of the specialized \textit{DRAGEN} equipped \textit{F1} instances of \textit{\ac{EC2}} are not possible with the price calculator tool, but can be done via the product page (\autocite{AmazonWebServices2023a}). Analyzing \textit{\ac{megSAP}}'s log files show that the \textit{DRAGEN} part of the mapping step takes approximately one hour. Using the f1.2xlarge instance type, this will amount to \SI{12.08}{\$}. The calculated cost for all other services, including an overview of the selected \textit{EC2} instance types, is detailed in \cref{table:awscostandtypes} and amounts to \SI{14.25}{\$}, bringing the total cost for one sample to \SI{26.33}{\$} (if retained on the \textit{S3} storage for a maximum of one month).
+
+Given the number of samples calculated in \cref{subsection:problem}, the total cost to reanalyze in the cloud would sum up to $\SI{1544}{\text{samples}}\times\SI{26.33}{\$}=\SI{40653.52}{\$}$.
+
+To handle the upload of all data currently archived at the \ac{DoHG@MHH}, an \textit{\ac{AWS} Snowball} edge storage device may be used instead of straining the relatively slow upload capacity provided. The approximately \SI{77.2}{\tera\byte} (see \cref{subsection:problem}) of data would fit on one device. Assuming the data transfer at the \ac{DoHG@MHH} can be completed in \SI{10}{\day}, which is feasible, the cost would be \SI{300}{\$} (see \autocite{AmazonWebServices2023b}), with an additional \SI{30}{\$} for each additional day.
+
+This removes half of the data transfer costs (only the upload, not the download of the analyzed data), bringing the total down to $\SI{40653.52}{\$}-\left(\frac{\SI{4.50}{\$}}{2}\times1544\right)+\SI{300}{\$}=\SI{37479.52}{\$}$.
+
+\begin{table}[H]
+    \centering
+    \caption{Results of \ac{AWS} price calculator tool and selected instance types}{Details can be found in \cref{appendix:awspricecalculationoptimized}.\\\smallskip}
+    \label{table:awscostandtypes}
+    \begin{tabularx}{\textwidth}{lXYYY}
+        \toprule
+        Description/Process & EC2 instance type & CPUs & Memory in GB & Cost in \unit{\$} \\
+        \midrule
+        Storage & & & & 2.45 \\ 
+        Data Transfer & & & & 4.50 \\
+        bam2fastq & t3.large & 2 & 8 & 0.16 \\
+        megSAPma & c6i.4xlarge & 16 & 32 & 2.08 \\ 
+        megSAPvc & t3.2xlarge & 8 & 32 & 1.15 \\ 
+        megSAPcn & r5.2xlarge & 8 & 64 & 3.88 \\ 
+        megSAPsv & t3.small & 2 & 2 & 0.04 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}

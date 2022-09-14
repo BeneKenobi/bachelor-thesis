@@ -1,0 +1,29 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+python-dotenv = "*"
+pandas = "*"
+pyarrow = "*"
+ipykernel = "*"
+plotly = "*"
+nbformat = ">=4.2.0"
+kaleido = "*"
+"hurry.filesize" = "*"
+jinja2 = "*"
+python-dateutil = "*"
+xlrd = "*"
+appnope = "*"
+black = {extras = ["jupyter"], version = "*"}
+matplotlib = "*"
+
+[dev-packages]
+black = {extras = ["jupyter"], version = "*"}
+mypy = "*"
+bandit = "*"
+flake8 = "*"
+
+[requires]
+python_version = "3.10"

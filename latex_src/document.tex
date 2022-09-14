@@ -1,0 +1,81 @@
+\input{format}
+
+% BibTeX Daten
+\bibliography{sources.bib}
+
+% Abbrevations
+\input{acronyms}
+
+\title{Implementing a Scientific Workflow Management System to Conduct the Transition to a Different Reference Genome of a Genetic Analysis Pipeline}
+\author{Benedikt Schnur\,\orcidlink{0000-0002-1977-7878}}
+
+\begin{document}
+\renewcommand{\autodot}{}% Remove all end-of-counter dots
+\pagenumbering{Roman}
+\input{title}
+
+\newgeometry{left=4cm,right=2cm,top=4cm,bottom=2cm,headheight=18pt,headsep=1.365cm,footskip=1cm,footnotesep=1.365cm}
+
+\cleardoublepage
+\pagestyle{scrheadings}
+\chead{\headmark}
+\renewcommand*{\sectionmarkformat}{}
+\cfoot{\pagemark}
+\AddtoDoHook{heading/endgroup/section}{\thispagestyle{plain}}
+
+% Inhaltsverzeichnis
+\renewcommand{\contentsname}{Table of contents}
+\tableofcontents
+
+% Abbildungsverzeichnis
+\clearpage
+\markright{}
+\listoffigures
+\cleardoublepage
+
+% Tabellenverzeichnis
+\clearpage
+\markright{}
+\listoftables
+
+% Abkürzungsverzeichnis
+\clearpage
+\markright{}
+\printacronyms[template=tabular]
+
+\clearpage
+\markright{}
+\lstlistoflistings
+
+\cleardoublepage
+\pagenumbering{arabic}
+\automark{section}
+
+\input{section_1}
+\cleardoublepage
+\input{section_2}
+\cleardoublepage
+\input{section_3}
+\cleardoublepage
+\input{section_4}
+\cleardoublepage
+\input{section_5}
+\cleardoublepage
+\input{section_6}
+\cleardoublepage
+\input{section_7}
+
+\cleardoublepage
+\printbibliography[heading=bibintoc]
+
+\cleardoublepage
+\appendix
+\addsec{Appendix}
+\renewcommand{\thesubsection}{\Roman{subsection}}
+\input{appendix}
+
+%\cleardoublepage
+%\pagenumbering{gobble}
+%\input{ee}
+
+\end{document}
