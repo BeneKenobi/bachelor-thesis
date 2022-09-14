@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Atkinson-Hyperlegible';
+  src: url('Atkinson-Hyperlegible-Regular-102.otf');
+}
+body {
+  background: url(https://benekenobi.github.io/bachelor-kolloquium/thesis/images/background-10_3072x1536.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 550px) {
+  h1 {
+    text-align: justify;
+    text-justify: distribute;
+  }
+}
