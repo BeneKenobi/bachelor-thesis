@@ -128,4 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-bam2fastqbenchmarks/
+bam2fastqbenchmarks/*.html

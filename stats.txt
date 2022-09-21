@@ -1,0 +1,64 @@
+\begin{table}[hp]
+\centering
+\caption{Duration of BAM to FastQ conversion by tool in minutes}
+\label{table:bam2fastduration}
+\begin{tabular}{lrrrrrrr}
+\toprule
+type & mean & std & min & 25\% & 50\% & 75\% & max \\
+\midrule
+biobambam2 & 34.81 & 0.36 & 34.40 & 34.49 & 34.73 & 35.17 & 35.24 \\
+ngsbits & 12.09 & 0.09 & 11.99 & 12.03 & 12.07 & 12.11 & 12.31 \\
+picard & 17.04 & 0.26 & 16.79 & 16.91 & 16.94 & 17.04 & 17.66 \\
+samtools multithread & 2.68 & 0.01 & 2.66 & 2.67 & 2.68 & 2.69 & 2.70 \\
+samtools singlethread & 9.49 & 0.04 & 9.42 & 9.45 & 9.50 & 9.52 & 9.55 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[hp]
+\centering
+\caption{Memory usage of BAM to FastQ conversion by tool}
+\label{table:bam2fastqmemory}
+\begin{tabular}{lrrrrrrr}
+\toprule
+type & mean & std & min & 25\% & 50\% & 75\% & max \\
+\midrule
+biobambam2 & \SI{143}{\mega\byte} & \SI{111}{\kilo\byte} & \SI{143}{\mega\byte} & \SI{143}{\mega\byte} & \SI{143}{\mega\byte} & \SI{143}{\mega\byte} & \SI{143}{\mega\byte} \\
+ngsbits & \SI{768}{\mega\byte} & \SI{1}{\mega\byte} & \SI{766}{\mega\byte} & \SI{766}{\mega\byte} & \SI{768}{\mega\byte} & \SI{769}{\mega\byte} & \SI{769}{\mega\byte} \\
+picard & \SI{2}{\giga\byte} & \SI{23}{\mega\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} \\
+samtools multithread & \SI{10}{\mega\byte} & \SI{81}{\kilo\byte} & \SI{10}{\mega\byte} & \SI{10}{\mega\byte} & \SI{10}{\mega\byte} & \SI{10}{\mega\byte} & \SI{10}{\mega\byte} \\
+samtools singlethread & \SI{5}{\mega\byte} & \SI{137}{\kilo\byte} & \SI{5}{\mega\byte} & \SI{5}{\mega\byte} & \SI{5}{\mega\byte} & \SI{5}{\mega\byte} & \SI{5}{\mega\byte} \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[hp]
+\centering
+\caption{Amount of data read by BAM to FastQ conversion by tool}
+\label{table:bam2fastqioread}
+\begin{tabular}{lrrrrrrr}
+\toprule
+type & mean & std & min & 25\% & 50\% & 75\% & max \\
+\midrule
+biobambam2 & \SI{9}{\giga\byte} & \SI{24}{\mega\byte} & \SI{9}{\giga\byte} & \SI{9}{\giga\byte} & \SI{9}{\giga\byte} & \SI{9}{\giga\byte} & \SI{9}{\giga\byte} \\
+ngsbits & \SI{8}{\giga\byte} & \SI{42}{\kilo\byte} & \SI{8}{\giga\byte} & \SI{8}{\giga\byte} & \SI{8}{\giga\byte} & \SI{8}{\giga\byte} & \SI{8}{\giga\byte} \\
+picard & \SI{37}{\giga\byte} & \SI{248}{\kilo\byte} & \SI{37}{\giga\byte} & \SI{37}{\giga\byte} & \SI{37}{\giga\byte} & \SI{37}{\giga\byte} & \SI{37}{\giga\byte} \\
+samtools multithread & \SI{8}{\giga\byte} & \SI{5}{\mega\byte} & \SI{8}{\giga\byte} & \SI{8}{\giga\byte} & \SI{8}{\giga\byte} & \SI{8}{\giga\byte} & \SI{8}{\giga\byte} \\
+samtools singlethread & \SI{6}{\giga\byte} & \SI{32}{\mega\byte} & \SI{6}{\giga\byte} & \SI{6}{\giga\byte} & \SI{6}{\giga\byte} & \SI{6}{\giga\byte} & \SI{7}{\giga\byte} \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[hp]
+\centering
+\caption{Amount of data written by BAM to FastQ conversion by tool}
+\label{table:bam2fastqiowrite}
+\begin{tabular}{lrrrrrrr}
+\toprule
+type & mean & std & min & 25\% & 50\% & 75\% & max \\
+\midrule
+biobambam2 & \SI{6}{\giga\byte} & \SI{0}{\\byte} & \SI{6}{\giga\byte} & \SI{6}{\giga\byte} & \SI{6}{\giga\byte} & \SI{6}{\giga\byte} & \SI{6}{\giga\byte} \\
+ngsbits & \SI{7}{\giga\byte} & \SI{0}{\\byte} & \SI{7}{\giga\byte} & \SI{7}{\giga\byte} & \SI{7}{\giga\byte} & \SI{7}{\giga\byte} & \SI{7}{\giga\byte} \\
+picard & \SI{34}{\giga\byte} & \SI{265}{\kilo\byte} & \SI{34}{\giga\byte} & \SI{34}{\giga\byte} & \SI{34}{\giga\byte} & \SI{34}{\giga\byte} & \SI{34}{\giga\byte} \\
+samtools multithread & \SI{6}{\giga\byte} & \SI{6}{\kilo\byte} & \SI{6}{\giga\byte} & \SI{6}{\giga\byte} & \SI{6}{\giga\byte} & \SI{6}{\giga\byte} & \SI{6}{\giga\byte} \\
+samtools singlethread & \SI{6}{\giga\byte} & \SI{20}{\kilo\byte} & \SI{6}{\giga\byte} & \SI{6}{\giga\byte} & \SI{6}{\giga\byte} & \SI{6}{\giga\byte} & \SI{6}{\giga\byte} \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -11,6 +11,8 @@ ipykernel = "*"
 plotly = "*"
 nbformat = ">=4.2.0"
 kaleido = "*"
+"hurry.filesize" = "*"
+jinja2 = "*"
 
 [dev-packages]
 black = {extras = ["jupyter"], version = "*"}
