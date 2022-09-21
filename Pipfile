@@ -5,9 +5,15 @@ name = "pypi"
 
 [packages]
 python-dotenv = "*"
+pandas = "*"
+pyarrow = "*"
+ipykernel = "*"
+plotly = "*"
+nbformat = ">=4.2.0"
+kaleido = "*"
 
 [dev-packages]
-black = "*"
+black = {extras = ["jupyter"], version = "*"}
 mypy = "*"
 bandit = "*"
 flake8 = "*"
