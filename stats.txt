@@ -1,67 +1,67 @@
 \begin{table}[hp]
 \centering
-\caption{Duration of BAM to FastQ conversion by tool in minutes}
+\caption{Duration of BAM to FastQ conversion of whole exome data by tool in minutes}
 \label{table:bam2fastduration}
 \begin{tabular}{lrrrrrrr}
 \toprule
 type & mean & std & min & 25\% & 50\% & 75\% & max \\
 \midrule
 biobambam2 & 34.81 & 0.36 & 34.40 & 34.49 & 34.73 & 35.17 & 35.24 \\
-ngsbits & 12.09 & 0.09 & 11.99 & 12.03 & 12.07 & 12.11 & 12.31 \\
-picard & 17.04 & 0.26 & 16.79 & 16.91 & 16.94 & 17.04 & 17.66 \\
-samtools multithread & 18.78 & 0.16 & 18.56 & 18.63 & 18.87 & 18.91 & 18.98 \\
-samtools singlethread & 59.69 & 0.64 & 58.91 & 59.03 & 59.93 & 60.09 & 60.59 \\
+ngs-bits & 12.09 & 0.09 & 11.99 & 12.03 & 12.07 & 12.11 & 12.31 \\
+Picard & 17.04 & 0.26 & 16.79 & 16.91 & 16.94 & 17.04 & 17.66 \\
+SAMtools multithread & 18.78 & 0.16 & 18.56 & 18.63 & 18.87 & 18.91 & 18.98 \\
+SAMtools singlethread & 59.69 & 0.64 & 58.91 & 59.03 & 59.93 & 60.09 & 60.59 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \begin{table}[hp]
 \centering
-\caption{Memory usage of BAM to FastQ conversion by tool}
+\caption{Memory usage of BAM to FastQ conversion of whole exome data by tool}
 \label{table:bam2fastqmemory}
 \begin{tabular}{lrrrrrrr}
 \toprule
 type & mean & std & min & 25\% & 50\% & 75\% & max \\
 \midrule
 biobambam2 & \SI{143}{\mega\byte} & \SI{111}{\kilo\byte} & \SI{143}{\mega\byte} & \SI{143}{\mega\byte} & \SI{143}{\mega\byte} & \SI{143}{\mega\byte} & \SI{143}{\mega\byte} \\
-ngsbits & \SI{768}{\mega\byte} & \SI{1}{\mega\byte} & \SI{766}{\mega\byte} & \SI{766}{\mega\byte} & \SI{768}{\mega\byte} & \SI{769}{\mega\byte} & \SI{769}{\mega\byte} \\
-picard & \SI{2}{\giga\byte} & \SI{23}{\mega\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} \\
-samtools multithread & \SI{2}{\giga\byte} & \SI{1}{\mega\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} \\
-samtools singlethread & \SI{870}{\mega\byte} & \SI{602}{\kilo\byte} & \SI{870}{\mega\byte} & \SI{870}{\mega\byte} & \SI{870}{\mega\byte} & \SI{870}{\mega\byte} & \SI{872}{\mega\byte} \\
+ngs-bits & \SI{768}{\mega\byte} & \SI{1}{\mega\byte} & \SI{766}{\mega\byte} & \SI{766}{\mega\byte} & \SI{768}{\mega\byte} & \SI{769}{\mega\byte} & \SI{769}{\mega\byte} \\
+Picard & \SI{2}{\giga\byte} & \SI{23}{\mega\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} \\
+SAMtools multithread & \SI{2}{\giga\byte} & \SI{1}{\mega\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} & \SI{2}{\giga\byte} \\
+SAMtools singlethread & \SI{870}{\mega\byte} & \SI{602}{\kilo\byte} & \SI{870}{\mega\byte} & \SI{870}{\mega\byte} & \SI{870}{\mega\byte} & \SI{870}{\mega\byte} & \SI{872}{\mega\byte} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \begin{table}[hp]
 \centering
-\caption{Amount of data read by BAM to FastQ conversion by tool}
+\caption{Amount of data read by BAM to FastQ conversion of whole exome data by tool}
 \label{table:bam2fastqioread}
 \begin{tabular}{lrrrrrrr}
 \toprule
 type & mean & std & min & 25\% & 50\% & 75\% & max \\
 \midrule
 biobambam2 & \SI{9}{\giga\byte} & \SI{24}{\mega\byte} & \SI{9}{\giga\byte} & \SI{9}{\giga\byte} & \SI{9}{\giga\byte} & \SI{9}{\giga\byte} & \SI{9}{\giga\byte} \\
-ngsbits & \SI{8}{\giga\byte} & \SI{42}{\kilo\byte} & \SI{8}{\giga\byte} & \SI{8}{\giga\byte} & \SI{8}{\giga\byte} & \SI{8}{\giga\byte} & \SI{8}{\giga\byte} \\
-picard & \SI{37}{\giga\byte} & \SI{248}{\kilo\byte} & \SI{37}{\giga\byte} & \SI{37}{\giga\byte} & \SI{37}{\giga\byte} & \SI{37}{\giga\byte} & \SI{37}{\giga\byte} \\
-samtools multithread & \SI{29}{\giga\byte} & \SI{43}{\kilo\byte} & \SI{29}{\giga\byte} & \SI{29}{\giga\byte} & \SI{29}{\giga\byte} & \SI{29}{\giga\byte} & \SI{29}{\giga\byte} \\
-samtools singlethread & \SI{29}{\giga\byte} & \SI{50}{\kilo\byte} & \SI{29}{\giga\byte} & \SI{29}{\giga\byte} & \SI{29}{\giga\byte} & \SI{29}{\giga\byte} & \SI{29}{\giga\byte} \\
+ngs-bits & \SI{8}{\giga\byte} & \SI{42}{\kilo\byte} & \SI{8}{\giga\byte} & \SI{8}{\giga\byte} & \SI{8}{\giga\byte} & \SI{8}{\giga\byte} & \SI{8}{\giga\byte} \\
+Picard & \SI{37}{\giga\byte} & \SI{248}{\kilo\byte} & \SI{37}{\giga\byte} & \SI{37}{\giga\byte} & \SI{37}{\giga\byte} & \SI{37}{\giga\byte} & \SI{37}{\giga\byte} \\
+SAMtools multithread & \SI{29}{\giga\byte} & \SI{43}{\kilo\byte} & \SI{29}{\giga\byte} & \SI{29}{\giga\byte} & \SI{29}{\giga\byte} & \SI{29}{\giga\byte} & \SI{29}{\giga\byte} \\
+SAMtools singlethread & \SI{29}{\giga\byte} & \SI{50}{\kilo\byte} & \SI{29}{\giga\byte} & \SI{29}{\giga\byte} & \SI{29}{\giga\byte} & \SI{29}{\giga\byte} & \SI{29}{\giga\byte} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \begin{table}[hp]
 \centering
-\caption{Amount of data written by BAM to FastQ conversion by tool}
+\caption{Amount of data written by BAM to FastQ conversion of whole exome data by tool}
 \label{table:bam2fastqiowrite}
 \begin{tabular}{lrrrrrrr}
 \toprule
 type & mean & std & min & 25\% & 50\% & 75\% & max \\
 \midrule
 biobambam2 & \SI{6}{\giga\byte} & \SI{0}{\\byte} & \SI{6}{\giga\byte} & \SI{6}{\giga\byte} & \SI{6}{\giga\byte} & \SI{6}{\giga\byte} & \SI{6}{\giga\byte} \\
-ngsbits & \SI{7}{\giga\byte} & \SI{0}{\\byte} & \SI{7}{\giga\byte} & \SI{7}{\giga\byte} & \SI{7}{\giga\byte} & \SI{7}{\giga\byte} & \SI{7}{\giga\byte} \\
-picard & \SI{34}{\giga\byte} & \SI{265}{\kilo\byte} & \SI{34}{\giga\byte} & \SI{34}{\giga\byte} & \SI{34}{\giga\byte} & \SI{34}{\giga\byte} & \SI{34}{\giga\byte} \\
-samtools multithread & \SI{30}{\giga\byte} & \SI{6}{\kilo\byte} & \SI{30}{\giga\byte} & \SI{30}{\giga\byte} & \SI{30}{\giga\byte} & \SI{30}{\giga\byte} & \SI{30}{\giga\byte} \\
-samtools singlethread & \SI{30}{\giga\byte} & \SI{0}{\\byte} & \SI{30}{\giga\byte} & \SI{30}{\giga\byte} & \SI{30}{\giga\byte} & \SI{30}{\giga\byte} & \SI{30}{\giga\byte} \\
+ngs-bits & \SI{7}{\giga\byte} & \SI{0}{\\byte} & \SI{7}{\giga\byte} & \SI{7}{\giga\byte} & \SI{7}{\giga\byte} & \SI{7}{\giga\byte} & \SI{7}{\giga\byte} \\
+Picard & \SI{34}{\giga\byte} & \SI{265}{\kilo\byte} & \SI{34}{\giga\byte} & \SI{34}{\giga\byte} & \SI{34}{\giga\byte} & \SI{34}{\giga\byte} & \SI{34}{\giga\byte} \\
+SAMtools multithread & \SI{30}{\giga\byte} & \SI{6}{\kilo\byte} & \SI{30}{\giga\byte} & \SI{30}{\giga\byte} & \SI{30}{\giga\byte} & \SI{30}{\giga\byte} & \SI{30}{\giga\byte} \\
+SAMtools singlethread & \SI{30}{\giga\byte} & \SI{0}{\\byte} & \SI{30}{\giga\byte} & \SI{30}{\giga\byte} & \SI{30}{\giga\byte} & \SI{30}{\giga\byte} & \SI{30}{\giga\byte} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -75,10 +75,10 @@ samtools singlethread & \SI{30}{\giga\byte} & \SI{0}{\\byte} & \SI{30}{\giga\byt
 type & duration \\
 \midrule
 biobambam2 & 3.73 \\
-ngsbits & 1.65 \\
-picard & 2.93 \\
-samtools multithread & 2.41 \\
-samtools singlethread & 7.85 \\
+ngs-bits & 1.65 \\
+Picard & 2.93 \\
+SAMtools multithread & 2.41 \\
+SAMtools singlethread & 7.85 \\
 \bottomrule
 \end{tabular}
 \end{table}

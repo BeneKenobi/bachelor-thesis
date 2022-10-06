@@ -13,6 +13,8 @@ nbformat = ">=4.2.0"
 kaleido = "*"
 "hurry.filesize" = "*"
 jinja2 = "*"
+python-dateutil = "*"
+xlrd = "*"
 
 [dev-packages]
 black = {extras = ["jupyter"], version = "*"}
