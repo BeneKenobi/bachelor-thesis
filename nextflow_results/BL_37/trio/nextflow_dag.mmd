@@ -1,0 +1,14 @@
+flowchart TD
+    p0((Channel.fromPath))
+    p1([splitCsv])
+    p2([map])
+    p3[megSAPtriovc]
+    p4[megSAPtriocn]
+    p5[megSAPtriosv]
+    p6(( ))
+    p0 --> p1
+    p1 --> p2
+    p2 -->|trios| p3
+    p3 --> p4
+    p4 --> p5
+    p5 --> p6

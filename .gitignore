@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 bam2fastqbenchmarks/*.html
+whole-genome-sequencings.csv
