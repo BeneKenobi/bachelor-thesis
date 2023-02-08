@@ -16,6 +16,7 @@ jinja2 = "*"
 python-dateutil = "*"
 xlrd = "*"
 appnope = "*"
+black = {extras = ["jupyter"], version = "*"}
 
 [dev-packages]
 black = {extras = ["jupyter"], version = "*"}
