@@ -15,6 +15,7 @@ kaleido = "*"
 jinja2 = "*"
 python-dateutil = "*"
 xlrd = "*"
+appnope = "*"
 
 [dev-packages]
 black = {extras = ["jupyter"], version = "*"}
