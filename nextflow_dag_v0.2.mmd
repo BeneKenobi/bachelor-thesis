@@ -1,0 +1,17 @@
+flowchart LR
+    p0((Channel.fromPath))
+    p1([map])
+    p2[bam2FastQ]
+    p3((FastQ files))
+    p4((Channel.fromPath))
+    p5([map])
+    p6([mix])
+    p7[megSAP]
+    p0 --> p1
+    p1 -->|bam_channel| p2
+    p2 --> p3
+    p2 --> p6
+    p4 --> p5
+    p5 -->|fastq_channel| p6
+    p6 --> p7
+    p3 -.-> p7
