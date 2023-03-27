@@ -1,0 +1,31 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Implementing a Scientific Workflow Management System to
+  Conduct the Transition to a Different Reference Genome of
+  a Genetic Analysis Pipeline
+message: Please cite the thesis, not this repository.
+type: software
+authors:
+  - given-names: Benedikt
+    family-names: Schnur
+    orcid: 'https://orcid.org/0000-0002-1977-7878'
+preferred-citation:
+  authors:
+    - family-names: Schnur
+      given-names: Benedikt
+      orcid: 'https://orcid.org/0000-0002-1977-7878'
+  title: >-
+    Implementing a Scientific Workflow Management System to
+    Conduct the Transition to a Different Reference Genome of
+    a Genetic Analysis Pipeline
+  type: thesis
+  year: 2023
+  identifiers:
+    - type: doi
+      value: 10.5281/zenodo.7773887
+  url: 'https://benekenobi.github.io/bachelor-thesis/'
+repository-code: 'https://github.com/BeneKenobi/bachelor-thesis'
+license: CC-BY-4.0
